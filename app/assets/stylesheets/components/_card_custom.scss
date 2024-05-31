@@ -1,0 +1,22 @@
+.card_custom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .btn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

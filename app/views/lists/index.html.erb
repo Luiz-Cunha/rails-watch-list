@@ -1,12 +1,55 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <%= image_tag "icon-nav.png" %>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "My lists", lists_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New list", new_list_path, class: "nav-link" %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg" %>);">
   <div class="container">
     <h1>Save any kind of film</h1>
   </div>
 </div>
 
-<% @lists.each do |list| %>
-<p><%= list.name %> <%= link_to "See this movie list", list_path(list) %></p>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-primary w-100" %>
+    </div>
 
-<% end %>
+  </div>
+  <div class="row g-3 pt-5">
+    <% @lists.each do |list| %>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 card_custom">
+        <%= image_tag "flag-card.png" %>
+        <%= link_to list.name, list_path(list), class: "btn btn-info rounded-pill" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "Create a movie list", new_list_path, class: "btn btn-primary" %>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Footer<i class="fas fa-heart"></i>
+  </div>
+</div>

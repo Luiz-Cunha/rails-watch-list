@@ -26,16 +26,16 @@
   </div>
 </div>
 
-<div class="container py-5">
+<div class="container py-5 viewport">
   <div class="row">
     <div class="col-6 mx-auto">
     <%= link_to "Create a movie list", new_list_path, class: "btn btn-primary w-100" %>
     </div>
 
   </div>
-  <div class="row g-3 pt-5">
+  <div class="row pt-5">
     <% @lists.each do |list| %>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-2 card_custom">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 card_custom px-5">
         <%= image_tag "flag-card.png" %>
         <%= link_to list.name, list_path(list), class: "btn btn-info rounded-pill" %>
       </div>
